@@ -51,6 +51,7 @@ export class TarefaService {
   remover(id: number): void{
     let tarefas: Tarefa[] = this.listarTodos();
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+    localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
   /**Esse metodo e usado para alterar o status da tarefas para concluido ou para remover
